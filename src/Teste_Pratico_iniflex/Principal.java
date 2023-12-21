@@ -51,8 +51,7 @@ public class Principal {
                 System.out.println(funcionario);
             }
         }
-        System.out.println();
-
+       
         System.out.println("Funcionários que fazem aniversário em outubro e dezembro");
         for (Funcionario funcionario : funcionarios){
             if(funcionario.getDtNascimento().getMonthValue() == 10 || funcionario.getDtNascimento().getMonthValue() == 12){
@@ -60,8 +59,7 @@ public class Principal {
             }
 
         }
-        System.out.println();
-
+     
         int maiorIdade = funcionarios.stream()
                         .map(funcionario -> funcionario.calcIdade())
                                 .max(Integer::compareTo)
@@ -74,9 +72,7 @@ public class Principal {
         System.out.println("Funcionario com maior idade");
         System.out.println("Nome: " +funcionarioMaioridade.getNome());
         System.out.println("Idade: " + funcionarioMaioridade.calcIdade());
-        System.out.println();
-
-
+   
 
         System.out.println("Nomes dos funcionarios de A - Z");
         funcionarios.sort(Comparator.comparing(Funcionario::getNome));
@@ -96,8 +92,6 @@ public class Principal {
             double qtdSalmin = funcionario.getSalario().divide(salMinimo, 2, RoundingMode.HALF_UP).doubleValue();
             System.out.println("Nomes: "+ funcionario.getNome()+"Quantidade de Salario Minimos: " +qtdSalmin);
         });
-
-
 
         }
     }
